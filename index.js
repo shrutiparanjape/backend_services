@@ -16,6 +16,7 @@ app.use(bodyParser.json())
 
 app.get('/personalDetails/:id', routes.personalDetails);
 app.get('/friendList/:id', routes.friendList);
+app.get('/feedPost/:id', routes.feedPost)
 
 
 app.post('/enterPersonalDetails', routes.enterPersonalDetails);

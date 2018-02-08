@@ -67,3 +67,15 @@ exports.addFriendDetails = function(req, res){
 		res.send(jsonResponse);
 	})
 }
+
+exports.feedPost = function(req, res){
+	var id = req.param('id',null);
+	var jsonResponse = {};
+
+	db.getFeedPost(id, function(result){
+		jsonResponse.code = 200
+		jsonResponse.status = 'Success'
+		jsonResponse.data = result
+		res.send(jsonResponse)
+	})
+}

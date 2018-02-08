@@ -18,7 +18,7 @@ module.exports.enterPersonalDetails = enterPersonalDetails;
 module.exports.getPersonalDetails = getPersonalDetails;
 module.exports.friendList = friendList;
 module.exports.addFriendDetails = addFriendDetails;
-
+module.exports.getFeedPost = getFeedPost;
 
 
 function enterPersonalDetails(data, cb){
@@ -39,6 +39,11 @@ function friendList(id, cb){
 function addFriendDetails(data, cb){
   var query = "INSERT into FriendList SET ?";
   insertCommand(query,data,cb);
+}
+
+function getFeedPost(id, cb){
+  var query = "Select * from FeedPost where fb_id = " + id;
+  executeCommand(query,cb);
 }
 
 
