@@ -4,7 +4,7 @@
   "description": "facebook like apis",
   "main": "index.js",
   "scripts": {
-    "start": "npm "
+    "start": "node index.js"
   },
   "author": "Shruti",
   "license": "ISC",
