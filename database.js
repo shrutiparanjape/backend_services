@@ -3,8 +3,9 @@ var mysql = require('mysql');
 var dbOpen = 'USE HotelSoft';
 
 var db = mysql.createConnection({
-  user     : 'root',
-  password : 'Asd11zxc',
+  host     : '52.11.67.218',
+  user     : 'unisonadmin',
+  password : 'Unison@123'
 });
 
 
