@@ -1,4 +1,5 @@
 var db = require('./database.js')
+	moment = require('moment')
 
 exports.personalDetails = function(req, res){
 	var id = req.param('id',null);
