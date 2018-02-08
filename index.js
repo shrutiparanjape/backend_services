@@ -20,6 +20,6 @@ app.get('/friendList/:id', routes.friendList)
 
 
 var httpServer = http.createServer(app);
-httpServer.listen(8080);
+httpServer.listen(process.env.PORT || 8080);
 
 console.log("Start");
