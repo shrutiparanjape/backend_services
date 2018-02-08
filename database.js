@@ -12,6 +12,7 @@ var db = mysql.createConnection({
 module.exports.enterPersonalDetails = enterPersonalDetails;
 module.exports.getPersonalDetails = getPersonalDetails;
 module.exports.friendList = friendList;
+module.exports.addFriendDetails = addFriendDetails;
 
 
 
@@ -28,6 +29,11 @@ function getPersonalDetails (id, cb){
 function friendList(id, cb){
   var query = 'Select FriendList.first_name, FriendList.last_name from FriendList Join PersonalDetails on FriendList.fb_id = PersonalDetails.fb_id where PersonalDetails.fb_id = ' + id;
   executeCommand(query,cb);
+}
+
+function addFriendDetails(data, cb){
+  var query = "INSERT into FriendList SET ?";
+  insertCommand(query,data,cb);
 }
 
 
@@ -55,6 +61,7 @@ function insertCommand(query, data, cb){
         console.log('Error: ' + error.message);
         return;
     }
+    console.log(data);
     db.query(query, data, function(error, result) {
       if(error) {
         console.log('Error: ' + error.message);
@@ -62,5 +69,5 @@ function insertCommand(query, data, cb){
       }
       cb(result);
     }); 
-  }); 
+  });
 }

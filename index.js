@@ -14,9 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.post('/enterPersonalDetails', routes.enterPersonalDetails)
 app.get('/personalDetails/:id', routes.personalDetails);
-app.get('/friendList/:id', routes.friendList)
+app.get('/friendList/:id', routes.friendList);
+
+
+app.post('/enterPersonalDetails', routes.enterPersonalDetails);
+app.post('/addFriendDetails/:id', routes.addFriendDetails);
 
 
 var httpServer = http.createServer(app);

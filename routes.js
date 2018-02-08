@@ -1,9 +1,5 @@
 var db = require('./database.js')
 
-exports.home = function(req,res){
-	res.send('Hello')
-}
-
 exports.personalDetails = function(req, res){
 	var id = req.param('id',null);
 	db.getPersonalDetails(id, function(result){
@@ -28,10 +24,6 @@ exports.enterPersonalDetails = function(req, res){
 		place : place
 	}
 
-	// var data = req.param('data', null)
-
-	console.log(JSON.stringify(data));
-
 	db.enterPersonalDetails(data, function(result){
 		id = result.insertId;
 		jsonResponse.code = 200
@@ -52,5 +44,25 @@ exports.friendList = function(req, res){
 		jsonResponse.status = 'Success'
 		jsonResponse.data = result
 		res.send(jsonResponse)
+	})
+}
+
+exports.addFriendDetails = function(req, res){
+	var id = req.param('id', null);
+	var first_name = req.param('first_name',null);
+	var last_name = req.param('last_name',null);
+	var data = {
+		first_name: first_name,
+		last_name: last_name,
+		fb_id: id
+	}
+
+	console.log(data);
+	var jsonResponse = {}
+
+	db.addFriendDetails(data, function(result){
+		jsonResponse.code = 200
+		jsonResponse.status = 'Success';
+		res.send(jsonResponse);
 	})
 }
