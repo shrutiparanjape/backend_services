@@ -38,6 +38,7 @@
     "inherits": "^2.0.3",
     "ipaddr.js": "^1.6.0",
     "isarray": "^2.0.2",
+    "jade": "^1.11.0",
     "js-string-escape": "^1.0.1",
     "media-typer": "^0.3.0",
     "merge-descriptors": "^1.0.1",
