@@ -2,7 +2,7 @@ var db = require('./database.js')
 	moment = require('moment')
 
 exports.home = function(req, res){
-	res.send('main-page')
+	res.render('main-page')
 }
 
 exports.personalDetails = function(req, res){
