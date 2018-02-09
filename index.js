@@ -13,7 +13,7 @@ app.locals.basedir = app.get('views');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
+app.get('/', routes.home);
 app.get('/personalDetails/:id', routes.personalDetails);
 app.get('/friendList/:id', routes.friendList);
 app.get('/feedPost/:id', routes.feedPost)

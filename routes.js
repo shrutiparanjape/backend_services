@@ -1,6 +1,10 @@
 var db = require('./database.js')
 	moment = require('moment')
 
+exports.home = function(req, res){
+	res.send('main-page')
+}
+
 exports.personalDetails = function(req, res){
 	var id = req.param('id',null);
 	db.getPersonalDetails(id, function(result){
