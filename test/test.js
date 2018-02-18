@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 
 describe('API', function() {
 
-  it('should Enter Personal Details for a New User on /enterPersonalDetails POST', function(done){
+  it('should Enter Personal Details for a New User on /enterPersonalDetails', function(done){
     var details = {
       first_name: "Test",
       last_name: "Done",
@@ -29,7 +29,7 @@ describe('API', function() {
     })
   });
 
-  it('should Get Personal Details of Already Existing User on /personalDetails/:id GET', function(done){
+  it('should Get Personal Details of Already Existing User on /personalDetails/:id', function(done){
     var id = 3
     chai.request(server)
     .get('/personalDetails/'+id)
@@ -47,7 +47,7 @@ describe('API', function() {
     })
   });
 
-  it('should Add Friends to a User on /addFriendDetails/:id POST', function(done){
+  it('should Add Friends to a User on /addFriendDetails/:id', function(done){
     var id = 3
     var details = {
       first_name: "Test",
@@ -64,7 +64,7 @@ describe('API', function() {
     })
   });
 
-  it('should Get Friend List of an User on /friendList/:id GET', function(done){
+  it('should Get Friend List of an User on /friendList/:id', function(done){
     var id = 3
     chai.request(server)
     .get('/friendList/'+id)
@@ -81,7 +81,7 @@ describe('API', function() {
     })
   });
 
-  it('should Get Post Feeds of an User on /feedPost/:id GET', function(done){
+  it('should Get Post Feeds of an User on /feedPost/:id', function(done){
     var id = 4
     chai.request(server)
     .get('/feedPost/'+id)
