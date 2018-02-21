@@ -8,7 +8,7 @@ var dbOpen = 'USE HotelSoft'; //DB name assigned
 // });
 
 var db = mysql.createConnection({ //connecting to DB
-  host     : '52.11.67.218',
+  host     : '52.37.81.65',
   user     : 'unisonadmin',
   password : 'Unison@123'
 });
